@@ -5,6 +5,10 @@ class Car
     @type = type
   end
 
+  def update(parking_handler)
+    parking_handler.park!(self)
+  end
+
   class << self
     def create(type)
       Car.new(type)

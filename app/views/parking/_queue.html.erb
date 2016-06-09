@@ -1,0 +1,8 @@
+<%= 'No Car Queue Fro Now' if @parking.queue.empty? %>
+
+<% @parking.queue.each do |car| %>
+  <div>
+    <div><%= image_tag '/assets/car', width: 70 %> </div>
+    <div>Car <%= car.type.to_s.capitalize; %></div>
+  </div>
+<% end %>

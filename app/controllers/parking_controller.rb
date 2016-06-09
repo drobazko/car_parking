@@ -17,14 +17,14 @@ class ParkingController < ApplicationController
   end
 
   def park_car
-    @parking = YAML.load(session[:parking])
-
     begin
+      @parking = YAML.load(session[:parking])
       @parking.park!(Car.new(params[:car_type].to_sym))
-      session[:parking] = @parking.to_yaml
     rescue Exception => e
       @msg = e
       render partial: 'error' and return
+    ensure
+      session[:parking] = @parking.to_yaml
     end
 
     render 'fill'
@@ -32,7 +32,7 @@ class ParkingController < ApplicationController
 
   def free
     @parking = YAML.load(session[:parking])
-    @parking.free_place_by_index!(params[:index].to_i)
+    @parking.free_place_by_index!(params[:index].to_i) rescue 'No free place for the queue car'
     session[:parking] = @parking.to_yaml
     render 'fill'
   end

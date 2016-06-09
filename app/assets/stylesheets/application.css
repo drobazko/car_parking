@@ -19,5 +19,7 @@
 .busy { background-color: red !important; }
 .msg { color: red; font-size: 12px; }
 body { padding: 20px; }
-
 .schema > div > div { clear: both; }
+.queue > div { float: left; margin: 10px; }
+.queue > div > div { clear: both; }
+.bold { font-weight: bold; }

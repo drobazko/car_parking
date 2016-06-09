@@ -1,3 +1,5 @@
-$(".schema").html("<%= j render(partial: 'parking/schema', locals: { address: nil }) %>");
+$(".schema").html("<%= j render(partial: 'parking/schema') %>");
 $(".msg").html("<%= @msg; %>");
+$(".queue").html("<%= j render(partial: 'parking/queue') %>");
+
 
