@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-12">
+    <%= form_tag fill_path, method: :post, remote: true do %>
+    Sedan # <%= text_field_tag :sedan_number, ParkingHandler::DEFAULT_QUANTITY[:sedan_number] %>
+    Disabled # <%= text_field_tag :disabled_number, ParkingHandler::DEFAULT_QUANTITY[:disabled_number] %>
+    Truck # <%= text_field_tag :truck_number, ParkingHandler::DEFAULT_QUANTITY[:truck_number] %>
+    <%= submit_tag 'Reset', class: 'btn' %>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <%= form_tag park_car_path, method: :post, remote: true do %>
+    Choose Car Type # <%= select_tag "car_type", options_for_select([ "sedan", "disabled", "truck"]) %>
+    <%= submit_tag 'Park Car', class: 'btn' %>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <%= form_tag random_path, method: :get, remote: true do %>
+    <%= submit_tag 'Generate Random', class: 'btn' %>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="msg"></div>
+  </div>
+</div>
+
+<div class="row schema"><%= render partial: 'schema' %></div>
