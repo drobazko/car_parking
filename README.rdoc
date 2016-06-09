@@ -2,8 +2,8 @@
 
 * mkdir parking
 * cd parking
-* git clone git@github.com:drobazko/parking.git
+* git clone git@github.com:drobazko/car_parking.git
 * rails s
-
+* in browser: localhost:3000
 
 
